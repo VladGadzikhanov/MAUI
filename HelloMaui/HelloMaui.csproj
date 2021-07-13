@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
     <OutputType>Exe</OutputType>
@@ -12,20 +12,21 @@
     <InvariantGlobalization Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">true</InvariantGlobalization>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794" />
-    <PackageReference Include="MySql.Data" Version="8.0.25" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
-    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794"/>
+    <PackageReference Include="MySql.Data" Version="8.0.25"/>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1"/>
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0-preview.5.21301.9"/>
   </ItemGroup>
   <ItemGroup>
-    <MauiSplashScreen Include="Resources\AppIcons\appiconfg.svg" Color="#512BD4" />
-    <MauiImage Include="Resources\AppIcons\appicon.svg" ForegroundFile="Resources\AppIcons\appiconfg.svg" IsAppIcon="true" />
-    <MauiImage Include="Resources\Images\*" />
-    <MauiFont Include="Resources\Fonts\*" />
+    <MauiSplashScreen Include="Resources\AppIcons\appiconfg.svg" Color="#512BD4"/>
+    <MauiImage Include="Resources\AppIcons\appicon.svg" ForegroundFile="Resources\AppIcons\appiconfg.svg" IsAppIcon="true"/>
+    <MauiImage Include="Resources\Images\*"/>
+    <MauiFont Include="Resources\Fonts\*"/>
   </ItemGroup>
   <ItemGroup>
-    <None Remove="MySql.Data" />
-    <None Remove="Pomelo.EntityFrameworkCore.MySql" />
-    <None Remove="MySql.Data.EntityFrameworkCore" />
+    <None Remove="MySql.Data"/>
+    <None Remove="Pomelo.EntityFrameworkCore.MySql"/>
+    <None Remove="MySql.Data.EntityFrameworkCore"/>
   </ItemGroup>
 </Project>

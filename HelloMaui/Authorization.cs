@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HelloMaui
 {
-    public class Authorization : DbContext
+    class Authorization : DbContext
     {
         public DbSet<User> Users { get; set; }
 
@@ -17,10 +17,16 @@ namespace HelloMaui
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>().Property(x => x.UserId).IsRequired();
-            modelBuilder.Entity<User>().Property(x => x.FirstName).IsRequired();
-            modelBuilder.Entity<User>().Property(x => x.LastName).IsRequired();
-            modelBuilder.Entity<User>().Property(x => x.Password).IsRequired();
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasKey(e => e.UserId);
+                entity.Property(e => e.FirstName).IsRequired();
+                entity.Property(e => e.LastName).IsRequired();
+                entity.Property(e => e.Password).IsRequired();
+            });
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
+            optionsBuilder.UseMySQL("server=localhost;port=3306;database=HelloMaui;user=root;password=00000000");
     }
 }

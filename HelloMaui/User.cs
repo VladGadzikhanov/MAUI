@@ -1,6 +1,6 @@
 ﻿namespace HelloMaui
 {
-    public class User
+    class User
     {
         public int UserId { get; set; }
         public string FirstName { get; set; }
